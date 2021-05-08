@@ -13,9 +13,8 @@ enum DoctorError {
 
 impl fmt::Display for DoctorError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
+        match &self {
             &DoctorError::PathNotFound(p) => write!(f, "Couldn't find this path: {}", p),
-            DoctorError::PathNotFound(_) => {}
         }
     }
 }
@@ -53,14 +52,14 @@ where
     })
 }
 
-pub fn smlink_version() {
-    let mut link_path = get_installation_path();
-    link_path.push("smlink");
-    link_path.push("flutter");
-    link_path.push("bin");
-    link_path.push("flutter");
-    get_flutter_version(&link_path.as_path());
-}
+// pub fn smlink_version() {
+//     let mut link_path = get_installation_path();
+//     link_path.push("smlink");
+//     link_path.push("flutter");
+//     link_path.push("bin");
+//     link_path.push("flutter");
+//     get_flutter_version(&link_path.as_path());
+// }
 
 // pub fn get_flutter_version(p: &Path) -> Result<(String, Channel)> {
 //     let mut path_buf = PathBuf::from(p);

@@ -1,7 +1,7 @@
 use std::env;
 
 use alias::{Alias, AliasFile};
-use doctor::smlink_version;
+// use doctor::smlink_version;
 use download_release::download_progress_bar;
 use installation_path::{delete_version, get_installed_versions};
 use releases::{get_list_of_versions, Channel, Release};
@@ -360,7 +360,7 @@ fn doctor_handler(commands: Vec<String>) {
     // }
     //check if symlink points to actual version of flutter
 
-    smlink_version();
+    // smlink_version();
     //check if FVM_PATH is set
     //check if all versions of flutter downloaded correspond to the folder name and change accordingly
     //maybe check for update, and ask to change default alias latest
