@@ -62,13 +62,13 @@ pub fn smlink_version() {
     get_flutter_version(&link_path.as_path());
 }
 
-pub fn get_flutter_version(p: &Path) -> Result<(String, Channel)> {
-    let mut path_buf = PathBuf::from(p);
-    path_buf.push("flutter");
-    let output = Command::new(path_buf.to_str().unwrap())
-        .arg("--version")
-        .output()
-        .expect("Couldn't run flutter process to check the version");
-    let bytes = output.stdout;
-    println!("{:#?}", bytes);
-}
+// pub fn get_flutter_version(p: &Path) -> Result<(String, Channel)> {
+//     let mut path_buf = PathBuf::from(p);
+//     path_buf.push("flutter");
+//     let output = Command::new(path_buf.to_str().unwrap())
+//         .arg("--version")
+//         .output()
+//         .expect("Couldn't run flutter process to check the version");
+//     let bytes = output.stdout;
+//     println!("{:#?}", bytes);
+// }
